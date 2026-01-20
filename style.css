@@ -124,7 +124,7 @@ section {
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background: rgba(45, 46, 50, 0.8);
   border: 1px solid rgba(100, 244, 172, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(100, 244, 172, 0.1);
@@ -152,6 +152,22 @@ section {
 .navbar-title {
   display: flex;
   align-items: center;
+  gap: 15px;
+}
+
+.header-profile-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #64f4ac;
+  box-shadow: 0 0 15px rgba(100, 244, 172, 0.4);
+  transition: all 0.3s ease;
+}
+
+.header-profile-photo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(100, 244, 172, 0.6);
 }
 
 .title-first-name {
@@ -744,12 +760,26 @@ section {
 }
 
 .project-card-1 {
-  background: linear-gradient(180deg, #16191e, #252628);
-  box-shadow: 0 10px 30px rgba(22, 25, 30, 0.6);
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  box-shadow: 0 10px 30px rgba(15, 32, 39, 0.7);
+  border: 1px solid rgba(100, 244, 172, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(100, 244, 172, 0.03) 50%, transparent 70%);
+  opacity: 1;
 }
 
 .project-card-1:hover {
-  box-shadow: 0 20px 50px rgba(22, 25, 30, 0.8), 0 0 30px rgba(100, 244, 172, 0.2);
+  box-shadow: 0 25px 60px rgba(15, 32, 39, 1), 0 0 50px rgba(100, 244, 172, 0.4);
+  transform: translateY(-10px) scale(1.02);
+  background: linear-gradient(135deg, #132831 0%, #24424d 50%, #316375 100%);
+  border-color: rgba(100, 244, 172, 0.5);
 }
 
 .project-card-2 {
@@ -762,12 +792,26 @@ section {
 }
 
 .project-card-3 {
-  background: linear-gradient(225deg, #01403a, #025951);
-  box-shadow: 0 10px 30px rgba(2, 89, 81, 0.6);
+  background: linear-gradient(135deg, #1a4d99 0%, #2563b8 40%, #3b82f6 100%);
+  box-shadow: 0 10px 30px rgba(26, 77, 153, 0.7);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 140, 0, 0.05) 50%, transparent 70%);
+  opacity: 1;
 }
 
 .project-card-3:hover {
-  box-shadow: 0 20px 50px rgba(2, 89, 81, 0.8), 0 0 30px rgba(100, 244, 172, 0.3);
+  box-shadow: 0 25px 70px rgba(26, 77, 153, 1), 0 0 60px rgba(255, 140, 0, 0.5);
+  transform: translateY(-10px) scale(1.02);
+  background: linear-gradient(135deg, #1e4ba1 0%, #2b6bcf 40%, #4a8fff 100%);
+  border-color: rgba(255, 140, 0, 0.6);
 }
 
 .project-card .title {
@@ -780,16 +824,41 @@ section {
 
 .project-card .title h3 {
   font-size: 32px;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 .project-card:hover .title h3 {
   color: #64f4ac;
   text-shadow: 0 0 20px rgba(100, 244, 172, 0.5);
   transform: translateX(5px);
+}
+
+/* Education Platform specific styling */
+.project-card-3 .title h3 {
+  color: #ffffff;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+  font-weight: 800;
+}
+
+.project-card-3:hover .title h3 {
+  color: #ff8c00;
+  text-shadow: 0 0 25px rgba(255, 140, 0, 0.6);
+}
+
+/* Online Complaint System specific styling */
+.project-card-1 .title h3 {
+  color: #ffffff;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+  font-weight: 800;
+}
+
+.project-card-1:hover .title h3 {
+  color: #64f4ac;
+  text-shadow: 0 0 25px rgba(100, 244, 172, 0.6);
 }
 
 .project-card .title .tech-stack {
@@ -818,6 +887,38 @@ section {
   box-shadow: 0 5px 15px rgba(100, 244, 172, 0.4);
 }
 
+/* Education Platform tech stack - orange theme */
+.project-card-3 .title .tech-stack p {
+  background: rgba(255, 140, 0, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 140, 0, 0.5);
+  box-shadow: 0 3px 10px rgba(255, 140, 0, 0.3);
+  font-weight: 800;
+}
+
+.project-card-3:hover .title .tech-stack p {
+  background: rgba(255, 140, 0, 0.4);
+  border-color: rgba(255, 140, 0, 0.8);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.6);
+}
+
+/* Online Complaint System tech stack - green theme */
+.project-card-1 .title .tech-stack p {
+  background: rgba(100, 244, 172, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(100, 244, 172, 0.5);
+  box-shadow: 0 3px 10px rgba(100, 244, 172, 0.3);
+  font-weight: 800;
+}
+
+.project-card-1:hover .title .tech-stack p {
+  background: rgba(100, 244, 172, 0.4);
+  border-color: rgba(100, 244, 172, 0.8);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(100, 244, 172, 0.6);
+}
+
 .project-card img {
   position: relative;
 }
@@ -836,33 +937,44 @@ section {
 }
 
 .project-img-2 {
-  width: 20vw;
-  height: 27vh;
+  width: 22vw;
+  height: 30vh;
   object-fit: cover;
   object-position: top;
-  top: 100px;
-  left: 150px;
-  transform: scale(1.5);
-  border-radius: 10px;
-  box-shadow: -10px 10px 10px #00000080;
+  top: 80px;
+  left: 130px;
+  transform: scale(1.4);
+  border-radius: 12px;
+  box-shadow: -15px 15px 25px rgba(0, 0, 0, 0.7);
   transition: 0.5s ease;
+  border: 3px solid rgba(100, 244, 172, 0.3);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .project-card:hover .project-img-2 {
-  box-shadow: -20px 20px 20px #00000080;
+  box-shadow: -25px 25px 35px rgba(0, 0, 0, 0.9), 0 0 25px rgba(100, 244, 172, 0.5);
+  transform: scale(1.5);
+  border-color: rgba(100, 244, 172, 0.6);
 }
 
 .project-img-3 {
-  width: 30vw;
-  top: 50px;
-  left: 75px;
-  border-radius: 10px;
-  box-shadow: -5px -5px 10px #00000040;
+  width: 28vw;
+  max-height: 300px;
+  top: 20px;
+  left: 60px;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   transition: 0.5s ease;
+  object-fit: cover;
+  border: 2px solid rgba(255, 140, 0, 0.5);
+  background: rgba(255, 255, 255, 0.02);
+  display: block;
 }
 
 .project-card:hover .project-img-3 {
-  box-shadow: -20px -20px 20px #00000040;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 140, 0, 0.6);
+  transform: scale(1.05) translateY(-5px);
+  border-color: rgba(255, 140, 0, 0.8);
 }
 
 .all-projects a {
